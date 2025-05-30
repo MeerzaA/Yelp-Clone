@@ -1,0 +1,50 @@
+ 
+<html>
+<head>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="d3CheckBox.js"></script>
+</head>
+<body>
+<div class="wrapper"></div>
+    <div class="header-container">  
+        <router-outlet name="header"></router-outlet>
+    </div>
+
+
+    <div class="content-space">
+        <div id="vis">
+            <!--https://d3-graph-gallery.com/graph/interactivity_button.html-->
+            <span class="spacer"></span>
+            <input type="checkbox" (change)="handleWiFiCheckboxChange($event)" name="WifiCheckBox">
+            <label for="WifiCheckBox">WiFi  </label>
+            <span class="spacer"></span>
+            <input type="checkbox" (change)="handleGroupFriendlyCheckboxChange($event)" name="GroupCheckBox">
+            <label for="GroupCheckBox">Group Friendly  </label>
+            <span class="spacer"></span>
+
+            <input type="checkbox" (change)="handleDogFriendlyCheckboxChange($event)" name="DogCheckBox">
+            <label for="DogCheckBox">Dog Friendly  </label>
+            <span class="spacer"></span>
+
+            <input type="checkbox" (change)="handleOutdoorSeatCheckboxChange($event)" name="OutdoorCheckBox">
+            <label for="OutdoorCheckBox">Outdoor Seating  </label>
+        </div>
+
+        
+
+        <!--include button for zip or name and then run the corresponding function-->
+        <div *ngIf="businessZip">
+            <div id="result-count"></div>
+            <div id="businesses"></div>
+        </div>
+        <div *ngIf="businessName">
+            <div id="result-count"></div>
+            <div id="businesses"></div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
